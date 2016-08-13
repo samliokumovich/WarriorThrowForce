@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
+<h1 align = "center" > Welcome to <%= @user.username %>'s profile! </h1>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Email:</strong>
+<div class = "well col-xs-8 col-xs-offset-2 padding_details">
+  <h4 class = "center description"><strong>Details</strong></h4>
+  <hr>
   <%= @user.email %>
-</p>
+  </div>
+  <div align="center">
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <div class="clear ">
+  <%= link_to 'Edit', edit_user_path(@user) , class: "btn btn-lg btn-success"%>
+  <% if current_user.admin? %>
+  <%= link_to 'Destroy', users_path, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <% end %>
+</div>
+</div>

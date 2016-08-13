@@ -6,6 +6,7 @@ $navbar-default-bg: #FF8787;
 #img_header {
   margin-top: -7px;
 }
+
 .logo_text {
   margin-top: 15px;
   margin-right: 25px;
@@ -25,4 +26,8 @@ $navbar-default-bg: #FF8787;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: bold;
+}
+.clear {
+  clear:both;
+
 }

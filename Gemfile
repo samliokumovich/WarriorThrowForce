@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0'
 #has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'paperclip', '~> 4.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
