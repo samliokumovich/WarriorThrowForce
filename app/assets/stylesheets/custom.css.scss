@@ -31,3 +31,29 @@ $navbar-default-bg: #FF8787;
   clear:both;
 
 }
+.timestamp {
+  font-style: italic;
+}
+.text_right {
+  float: right;
+}
+.description {
+  margin-top: -3px;
+}
+.post-actions{
+  border-top: 2px solid #FAB0B0;
+padding-top: 5px;
+}
+.posts-title{
+font-weight: bold;
+font-size: 1.5em;
+}
+.posts-title:hover{
+  color: #cc2626;
+}
+.posts-body{
+border-top:  1px solid #000;
+padding-top: 25px;
+padding-bottom: 25px;
+
+}

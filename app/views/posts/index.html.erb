@@ -1,0 +1,37 @@
+
+<h1 align = "center">News Feed
+<% if  logged_in?%>
+<br />
+  <%= link_to 'Create A Post', new_post_path, class: "btn btn-success btn-md" %>
+<% end %>
+</h1>
+
+    <% @posts.order(created_at:  :DESC).each do |post| %>
+    <div class = "row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="well well-lg">
+          <div class="posts-title">
+            <%= link_to  post.title, post %>
+          </div>
+          <div class="posts-body">
+            <%= truncate(post.description, length: 100) %>
+          </div>
+          <hr>
+          <div class = "timestamp">
+            Posted <%= time_ago_in_words(post.created_at) %> ago by <%= User.find(post.user_id).username %>
+          </div>
+          <% if current_user == User.find(post.user_id) %>
+          <div class="post-actions">
+            <div class = "text_right">
+            <%= link_to 'Edit', edit_post_path(post) , class: "btn btn-xs btn-primary"%>
+            <%= link_to 'Delete This', post_path(post), method: :delete,
+              data: {confirm: "Delete this Article?"} , class: "btn btn-danger btn-xs" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+<br>
